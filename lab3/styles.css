@@ -1,0 +1,9 @@
+.image-preview {
+    border: 30px solid;
+    border-top-color: skyblue;
+    border-bottom-color: lightgreen;
+    border-left-color: #ffefd5;
+    border-right-color: lightpink;
+    width: fit-content;
+    padding: 10px;
+}
