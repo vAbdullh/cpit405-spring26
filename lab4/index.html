@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>CPIT-405 lab 4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            background-color: black;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h1>Great Auto Parts - Order Form</h1>
+
+        <form>
+            <label>First Name:</label>
+            <input type="text" placeholder="Enter your first name">
+
+            <label>Last Name:</label>
+            <input type="text" placeholder="Enter your last name">
+
+            <label>Email:</label>
+            <input type="email" placeholder="Enter your email address">
+
+            <label>Phone number:</label>
+            <input type="tel" placeholder="Enter your phone number">
+
+            <label>Make:</label>
+            <input type="text" placeholder="Make">
+
+            <label>Model:</label>
+            <input type="text" placeholder="Model">
+
+            <label>Year:</label>
+            <input type="number" placeholder="Year">
+
+            <label>Date:</label>
+            <input type="date">
+
+            <label>Spare Part:</label>
+            <input type="text" placeholder="Enter the spare part you need">
+
+            <label>Quantity:</label>
+            <input type="number" placeholder="Enter the quantity of the spare part you need">
+
+            <label>Comment:</label>
+            <textarea placeholder="Enter your comment"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
