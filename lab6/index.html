@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 6</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Lab 6</h1>
+        <h2>Like or dislike</h2>
+        <div class="voting-section">
+            <button id="likeBtn" class="vote-btn">
+                <span class="emoji">👍</span><span id="likeCount">100</span>
+            </button>
+            <button id="dislikeBtn" class="vote-btn">
+                <span class="emoji">👎</span><span id="dislikeCount">20</span>
+            </button>
+        </div>
+
+        <h2>Comments</h2>
+        <div class="comments-input-section">
+            <textarea id="commentInput" placeholder="Write a comment..."></textarea>
+            <div class="actions">
+                <button id="submitBtn" class="action-btn">Submit</button>
+                <button id="resetBtn" class="action-btn">Clear</button>
+            </div>
+        </div>
+
+        <div id="commentsSection" class="comments-display-section">
+            <!-- Comments container -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
