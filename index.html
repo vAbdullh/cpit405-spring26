@@ -1,24 +1,143 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abdullah</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdullah | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
-  <h1>CPIT-405 - Fall 2026</h1>
-  <p>A website for CPIT-405 labs</p>
-  <p>Name: Abdullah</p>
-  <h2>Labs:</h2>
-  <ol>
-    <li><a href="./lab2/index.html">Lab2</a></li>
-    <li><a href="./lab3/index.html">Lab3</a></li>
-    <li><a href="./lab4/index.html">Lab4</a></li>
-    <li><a href="./lab5/index.html">Lab5</a></li>
-    <li><a href="./lab6/index.html">Lab6</a></li>
-  </ol>
+  <header>
+    <div class="header-container">
+      <div class="header-logo">
+        <h1>Abdullah Alhalawni</h1>
+        <p>Web developer | Cloud Engineer</p>
+      </div>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="hamburger-icon">
+        <i class="fas fa-bars"></i>
+      </label>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="labs.html">Labs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="main-wrapper">
+    <aside class="sidebar">
+      <div class="profile-container">
+        <div class="profile-img">
+          <img src="assets/avatar.jpg" alt="Avatar image">
+        </div>
+      </div>
+
+      <div class="sidebar-nav">
+        <a href="#about" class="sidebar-btn">About Me</a>
+        <a href="#education" class="sidebar-btn">Education</a>
+        <a href="#skills" class="sidebar-btn">Skills</a>
+        <a href="#experience" class="sidebar-btn">Experience</a>
+        <a href="assets/Abdullah_Alhalawani_Resume.pdf" class="sidebar-btn" target="_blank">CV</a>
+      </div>
+
+      <div class="sidebar-info">
+        <h3>Info</h3>
+        <div class="info-separator"></div>
+        <ul class="info-list">
+          <li><strong>Name:</strong>Abdullah Alhalawni</li>
+          <li><strong>ID:</strong> 2236079</li>
+          <li><strong>Email:</strong> <a href="mailto:aalhalawani0004@stu.kau.edu.sa">aalhalawani0004@stu.kau.edu.sa</a>
+          </li>
+          <li><strong>Phone:</strong> <a href="tel:+966123456789">+966123456789</a></li>
+        </ul>
+        <div class="social-icons">
+          <a href="https://github.com/vAbdullh" class="github"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/abdullah-alhalawani/" class="linkedin"><i
+              class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="content">
+      <!-- About Me Section -->
+      <section id="about" class="section">
+        <div class="section-header">
+          <h2>About Me</h2>
+        </div>
+        <div class="about-text">
+
+          <h2 class="about-header">Software Engineer | Full-Stack Web Developer | Web Security | Cloud & Cybersecurity
+          </h2>
+          <p>
+            I’m Abdullah, a software engineer focused on building full-stack web applications using technologies like
+            React, Next.js, Node.js, and Express. I’ve worked across different environments—including startups,
+            fintech,
+            academic projects, hackathons, and
+            large-scale events—where I’ve contributed to both development and technical team leadership. Currently,
+            I’m
+            deepening my expertise in cloud computing and cybersecurity, aiming to build secure and
+            scalable systems.
+            Open to collaborations and projects that solve real-world problems.
+          </p>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education" class="section">
+        <div class="section-header">
+          <h2>Education</h2>
+        </div>
+        <ul class="bullet-list">
+          <li>Bachelor of Information Technology - King Abdulaziz University, KSA (2021-2026)</li>
+          <li>High School (2017-2020)</li>
+        </ul>
+      </section>
+
+      <!-- Technical Skills Section -->
+      <section id="skills" class="section">
+        <div class="section-header">
+          <h2>Technical Skills</h2>
+        </div>
+        <ul class="bullet-list">
+          <li><strong>Web:</strong> HTML, CSS, JavaScript, React, Next.js, Tailwind CSS, Bootstrap, Radix UI, Figma</li>
+          <li><strong>Backend:</strong> Node.js, Python, Express.js, Next.js</li>
+          <li><strong>Database:</strong> MongoDB, PostgreSQL, MySQL</li>
+          <li><strong>Cloud:</strong> Azure, DigitalOcean, AWS, Oracle Cloud</li>
+        </ul>
+      </section>
+
+      <!-- Achievements Section -->
+      <section id="experience" class="section">
+        <div class="section-header">
+          <h2>Experiences</h2>
+        </div>
+        <ul class="bullet-list">
+          <li><strong>Research Assistant</strong>, King Abdulaziz University – Collaborated on academic research
+            projects in software engineering, working closely with PhD researcher Khalid Alharbi on system development
+            and analysis</li>
+
+          <li><strong>Software Engineer Intern</strong>, Waki (2025) – Contributed to full-stack development,
+            collaborated on code implementation, and supported team coordination during project execution</li>
+
+          <li><strong>Web Specialist</strong>, Protothon – Built and maintained the event website, working closely with
+            designers to deliver a functional and user-friendly interface</li>
+
+          <li><strong>Web Department Leader</strong>, Baseratk – Led the web team, managed development tasks, and
+            ensured delivery of technical solutions for the organization</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 - Abdullah Alhalawni - CPIT 405</p>
+  </footer>
 </body>
 
 </html>
