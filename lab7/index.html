@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 7: Unsplash Image Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="top-header">
+        <strong>Unsplash API</strong>
+        <input type="text" id="search-input" value="Makkah" placeholder="Search for images (e.g., nature)...">
+        <button id="search-xhr-btn" class="action-btn">Search using XHR</button>
+        <button id="search-promises-btn" class="action-btn">Search using fetch (promises)</button>
+        <button id="search-async-btn" class="action-btn">Search using fetch (async/await)</button>
+    </header>
+
+    <div class="container">
+        <div class="setup-section" id="setup-section">
+            <div class="card">
+                <h3>API Configuration</h3>
+                <p>Enter your Unsplash Access Key below:</p>
+                <div class="input-group">
+                    <input type="password" id="api-key-input" placeholder="Access Key...">
+                    <button id="save-key-btn" class="action-btn">Save Key</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="loader" class="loader hidden">
+            <p>Loading images...</p>
+        </div>
+
+        <div class="image-gallery" id="image-gallery">
+            <!-- Images will be injected here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
