@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Viewer | Abdullah Portfolio</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-logo">
+                <h1>Abdullah Alhalawni</h1>
+                <p>Web developer | Cloud Engineer</p>
+            </div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger-icon">
+                <i class="fas fa-bars"></i>
+            </label>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../projects.html" class="active">Projects</a></li>
+                    <li><a href="../../labs.html">Labs</a></li>
+                    <li><a href="../../contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <aside class="sidebar">
+            <div class="profile-container">
+                <div class="profile-img">
+                    <img src="../../assets/avatar.jpg" alt="Avatar image">
+                </div>
+            </div>
+
+            <div class="sidebar-nav">
+                <a href="../../index.html#about" class="sidebar-btn">About Me</a>
+                <a href="../../index.html#education" class="sidebar-btn">Education</a>
+                <a href="../../index.html#skills" class="sidebar-btn">Skills</a>
+                <a href="../../index.html#experience" class="sidebar-btn">Experience</a>
+                <a href="../../assets/Abdullah_Alhalawani_Resume.pdf" class="sidebar-btn" target="_blank">CV</a>
+            </div>
+
+            <div class="sidebar-info">
+                <h3>Info</h3>
+                <div class="info-separator"></div>
+                <ul class="info-list">
+                    <li><strong>Name:</strong>Abdullah Alhalawni</li>
+                    <li><strong>ID:</strong> 2236079</li>
+                    <li><strong>Email:</strong> <a
+                            href="mailto:aalhalawani0004@stu.kau.edu.sa">aalhalawani0004@stu.kau.edu.sa</a></li>
+                    <li><strong>Phone:</strong> <a href="tel:+966123456789">+966123456789</a></li>
+                </ul>
+                <div class="social-icons">
+                    <a href="https://github.com/vAbdullh" class="github"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/abdullah-alhalawani/" class="linkedin"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content">
+            <section class="section">
+                <div class="section-header">
+                    <a href="../../projects.html" style="text-decoration: none; color: var(--text-muted); font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                        <i class="fas fa-arrow-left"></i> Back to Projects
+                    </a>
+                    <h2>GitHub Profile Viewer</h2>
+                </div>
+
+                <div class="github-search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="github-username" placeholder="Search GitHub username..." value="vAbdullh">
+                        <button id="search-btn" class="project-btn">Search</button>
+                    </div>
+                </div>
+
+                <div id="loader" class="loader-container" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Fetching data...</p>
+                </div>
+
+                <div id="error-message" class="error-container" style="display: none;">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p id="error-text">User not found. Please try again.</p>
+                </div>
+
+                <div id="profile-result" class="profile-layout" style="display: none;">
+                    <!-- Main Profile Header -->
+                    <div class="profile-card main-info-card">
+                        <div class="profile-header">
+                            <div class="avatar-container">
+                                <img id="user-avatar" src="" alt="Avatar">
+                            </div>
+                            <div class="user-meta">
+                                <h3 id="user-name">Loading...</h3>
+                                <a id="user-login" href="" target="_blank">@loading</a>
+                                <p id="user-bio">User bio goes here...</p>
+                                <div class="user-joined">
+                                    <i class="far fa-calendar-alt"></i> Joined <span id="user-joined-date">...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-value" id="stat-repos">0</span>
+                            <span class="stat-label">Repositories</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value" id="stat-followers">0</span>
+                            <span class="stat-label">Followers</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value" id="stat-following">0</span>
+                            <span class="stat-label">Following</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value" id="stat-gists">0</span>
+                            <span class="stat-label">Gists</span>
+                        </div>
+                    </div>
+
+                    <!-- Additional Details -->
+                    <div class="details-grid">
+                        <div class="detail-item" id="detail-location-container">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span id="detail-location">Location</span>
+                        </div>
+                        <div class="detail-item" id="detail-website-container">
+                            <i class="fas fa-link"></i>
+                            <a id="detail-website" href="" target="_blank">Website</a>
+                        </div>
+                        <div class="detail-item" id="detail-twitter-container">
+                            <i class="fab fa-twitter"></i>
+                            <a id="detail-twitter" href="" target="_blank">Twitter</a>
+                        </div>
+                        <div class="detail-item" id="detail-company-container">
+                            <i class="fas fa-building"></i>
+                            <span id="detail-company">Company</span>
+                        </div>
+                    </div>
+
+                    <!-- Repositories Section -->
+                    <div class="repos-section">
+                        <h3><i class="fas fa-book-bookmark"></i> Recent Repositories</h3>
+                        <div id="repos-container" class="repos-grid">
+                            <!-- Repos will be injected here -->
+                        </div>
+                        <div class="view-all-container">
+                            <a id="view-all-link" href="" target="_blank" class="lab-link">View all on GitHub &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Abdullah Alhalawni - CPIT 405 Portfolio</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
