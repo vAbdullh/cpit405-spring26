@@ -1,0 +1,178 @@
+/* Layout Component Styles */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #333;
+  padding: 15px 20px;
+}
+
+.header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+.header nav a:hover {
+  text-decoration: underline;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.footer {
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 20px;
+  font-size: 12px;
+}
+
+/* Home Page Styles */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-form {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 30px;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #767676;
+  border-radius: 0;
+  font-size: 14px;
+}
+
+.search-form input:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.search-form button {
+  padding: 10px 20px;
+  background-color: #008080;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-form button:hover {
+  background-color: #006666;
+}
+
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .recipes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .recipes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.recipe-card {
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.recipe-link {
+  text-decoration: none;
+}
+
+.recipe-card h3 {
+  padding: 15px;
+  font-size: 16px;
+  color: blue;
+  text-decoration: underline;
+}
+
+/* Recipe Details Page Styles */
+.recipe-details-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.recipe-details-container h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.detail-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.recipe-summary {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.recipe-summary a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.recipe-details-container h2 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.recipe-details-container ul,
+.recipe-details-container ol {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.recipe-instructions {
+  font-size: 14px;
+}
+
+/* About Page Styles */
+.about-container {
+  padding: 20px;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #666;
+}
