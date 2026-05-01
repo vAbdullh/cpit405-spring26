@@ -1,10 +1,8 @@
-import React from 'react';
-
 export default function About() {
   return (
-    <main className="main-content">
-      <h1 className="title">About us</h1>
-      <p>This is the Link Shrinker application created for Lab 8.</p>
-    </main>
+    <div className="about-container">
+      <h1>About Us</h1>
+      <p>This is a React application built for Lab 09.</p>
+    </div>
   );
 }

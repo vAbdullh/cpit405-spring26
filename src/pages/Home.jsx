@@ -1,54 +1,60 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
-  const [longUrl, setLongUrl] = useState('');
-  const [shortCode, setShortCode] = useState('');
-  const [shortenedUrl, setShortenedUrl] = useState('');
+  const [query, setQuery] = useState('pasta');
+  const [recipes, setRecipes] = useState([]);
 
-  const handleShorten = () => {
-    if (!longUrl) return;
-    const code = shortCode || Math.random().toString(36).substring(2, 8);
-    setShortenedUrl(`https://cpt405.co/${code}`);
+  const fetchRecipes = async (searchQuery) => {
+    try {
+      const apiKey = import.meta.env.VITE_SPOONACULAR_API_KEY;
+      const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${searchQuery}`);
+      const data = await response.json();
+      if (data.results) {
+        setRecipes(data.results);
+      }
+    } catch (error) {
+      console.error("Error fetching recipes:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchRecipes('pasta');
+  }, []);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (query.trim()) {
+      fetchRecipes(query);
+    }
   };
 
   return (
-    <main className="main-content">
-      <h1 className="title">Link Shrinker</h1>
-      
-      <div className="form-group">
-        <label className="label">Long URL:</label>
-        <input
-          type="url"
-          className="input"
-          value={longUrl}
-          onChange={(e) => setLongUrl(e.target.value)}
-          placeholder="https://react.dev/learn/reusing-logic-with-custom-hooks"
+    <div className="home-container">
+      <form onSubmit={handleSearch} className="search-form">
+        <input 
+          type="text" 
+          value={query} 
+          onChange={(e) => setQuery(e.target.value)} 
+          placeholder="Search recipes..." 
         />
+        <button type="submit">SEARCH</button>
+      </form>
 
-        <label className="label">Enter short code:</label>
-        <input
-          type="text"
-          className="input"
-          value={shortCode}
-          onChange={(e) => setShortCode(e.target.value)}
-          placeholder="react101"
-        />
-
-        <div className="button-container">
-          <button className="btn-shorten" onClick={handleShorten}>
-            Shorten
-          </button>
-        </div>
-
-        {shortenedUrl && (
-          <div className="result-group">
-            <label className="label">Short URL</label>
-            <div className="result-box">
-              {shortenedUrl}
+      <div className="recipes-grid">
+        {recipes.length > 0 ? (
+          recipes.map(recipe => (
+            <div key={recipe.id} className="recipe-card">
+              <img src={recipe.image} alt={recipe.title} />
+              <Link to={`/recipe/${recipe.id}`} className="recipe-link">
+                <h3>{recipe.title}</h3>
+              </Link>
             </div>
-          </div>
+          ))
+        ) : (
+          <p className="no-results">Nothing found</p>
         )}
       </div>
-    </main>
+    </div>
   );
 }
