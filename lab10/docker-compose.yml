@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  web:
+    image: php:8.1-apache
+    container_name: php_web_mvc
+    ports:
+      - "8080:80"
+    volumes:
+      - ./2236079_Abdullah_Alhalawani-cpit405-lab-assignment3:/var/www/html
+    depends_on:
+      - db
+    command: >
+      bash -c "docker-php-ext-install pdo pdo_mysql && apache2-foreground"
+
+  db:
+    image: mysql:8.0
+    container_name: mysql_db_mvc
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: mvc_project
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./2236079_Abdullah_Alhalawani-cpit405-lab-assignment3/Documents/db-install-statements.sql:/docker-entrypoint-initdb.d/init.sql
